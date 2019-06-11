@@ -16,8 +16,15 @@ get '/test' do
   'bla bla bla'
 end
 
-get '/cat' do
-  @names = %w(Amigo Oscar Keanu).sample
+get '/random-cat' do
+  @names = %w(Kluski Pierogi Keanu).sample
+  erb(:index) 
+end
+
+get '/named-cat' do
+  p params
+  
+  @names = params[:names]
   erb(:index) 
 end
 

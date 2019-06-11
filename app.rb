@@ -3,6 +3,7 @@ require 'shotgun'
 
 set :session_secret, 'super secret'
 
+
 get '/' do
   'Hello world!'
 end
@@ -16,6 +17,7 @@ get '/test' do
 end
 
 get '/cat' do
+  @names = %w(Amigo Oscar Keanu).sample
   erb(:index) 
 end
 
